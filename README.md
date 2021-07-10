@@ -2,4 +2,6 @@
 DevOps Workshop Assignment - GIT &amp; GITHUB TASK
 
 
-YAML file of Ansible task added -
+* YAML file of Ansible task added - 
+  
+  ➥ Link - 
