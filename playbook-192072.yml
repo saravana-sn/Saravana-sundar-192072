@@ -1,0 +1,33 @@
+---
+#saravana-sundar-nadar-192072
+
+- name: Saravana sundar Nadar - 192072
+  hosts: slave_1
+  remote_user: root
+  vars:
+    passwd: $6$S2n0uh0P$un8G.gV3s6vAN5XryMx0MkzDo90U4etX68z6DBzDZWTYQVnmuGGbJVOsQrnQCxE.Hutca/qrrqyvnEp3Bkbqu0
+  tasks:
+    - name: Installing Packages
+      become: yes
+      become_user: root
+      apt:
+        pkg:
+          - postgresql
+          - nginx
+        state: present
+        update_cache: yes
+
+    - name: Create user with my name-saravana
+      user:
+        name: saravana
+        password: "{{ passwd }}"
+
+    - name: Create Directory with my rollno-192072
+      file:
+        path: /home/192072
+        state: directory
+
+    - name: Unistalling nano
+      apt: name=nano state=absent
+
+
